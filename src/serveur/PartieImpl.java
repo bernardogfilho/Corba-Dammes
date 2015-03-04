@@ -14,11 +14,8 @@ public class PartieImpl extends PartiePOA {
     public String nom;
     public Joueur[] joueurs;
 
-    public PartieImpl(POA poa, Joueur joueurBlanc, String nom) {
+    public PartieImpl(POA poa) {
         poa_ = poa;
-        joueurs = new Joueur[2];
-        joueurs[0] = joueurBlanc;
-        this.nom = nom;
     }
 
     @Override
