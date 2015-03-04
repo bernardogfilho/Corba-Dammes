@@ -1,0 +1,57 @@
+module Dames {
+
+
+    // Interaction avec un joueur
+    //
+    interface Joueur
+    {
+        readonly attribute string nomJoueur;
+        void aToiDeJouer();
+        void partieGagnee();
+        void partiePerdue();
+    };
+
+
+    // Structure de données pour mémoriser une partie
+    // et/ou échanger les informations nécessaires entre
+    // joueurs et gestionnaire de parties
+    //
+    struct Pion
+    {
+        long x;
+        long y;
+        boolean cestRoi;
+    };
+
+    typedef sequence <Pion> pionsBlancs;
+    typedef sequence <Pion> pionsNoirs;
+
+    struct Damier
+    {
+        pionsBlancs pionsBlancs;
+        pionsNoirs pionsNoirs;
+    };
+
+    // Le gestionnaire de parties
+    //
+    interface Partie
+    {
+        readonly attribute Joueur blancs;
+        readonly attribute Joueur noirs;
+
+        // Ajouter ici les méthodes, attributs et exceptions
+        // nécessaires au fonctionnement du jeu
+        void faireUnDeplacement(in Pion pion);
+
+    };
+
+    interface GestionaireDePartie
+    {
+        Partie creationDunePartie(in Joueur pionsBlancs, in string nomDeLaPartie);
+        Partie ajouterJoueurPionsNoirs(in Joueur pionsNoirs, in string nomDeLaPartie);
+    };
+
+
+};
+
+
