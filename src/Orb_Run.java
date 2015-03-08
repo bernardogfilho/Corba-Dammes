@@ -1,5 +1,3 @@
-package serveur;
-
 import org.omg.CORBA.ORB;
 
 /**

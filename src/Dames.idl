@@ -42,7 +42,7 @@ module dames {
         // Ajouter ici les méthodes, attributs et exceptions
         // nécessaires au fonctionnement du jeu
         void faireUnDeplacement(in Pion pion);
-
+        void ajouterJoueurNoirs(in Joueur joueurNoirs);
     };
 
     interface GestionaireDePartie

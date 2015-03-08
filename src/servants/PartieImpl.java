@@ -1,4 +1,4 @@
-package serveur;
+package servants;
 
 import Dames.Joueur;
 import Dames.PartiePOA;
@@ -11,11 +11,23 @@ import org.omg.PortableServer.POA;
 public class PartieImpl extends PartiePOA {
 
     protected POA poa_;
-    public String nom;
-    public Joueur[] joueurs;
+    private Joueur blancs;
+    private Joueur noirs;
 
     public PartieImpl(POA poa) {
         poa_ = poa;
+    }
+
+    public PartieImpl() {
+        
+    }
+
+    public PartieImpl(Joueur pionsBlancs) {
+        super();
+    }
+
+    public void setJoueurNoir(Joueur noirs){
+        this.noirs = noirs;
     }
 
     @Override
@@ -31,5 +43,10 @@ public class PartieImpl extends PartiePOA {
     @Override
     public void faireUnDeplacement(Pion pion) {
 
+    }
+
+    @Override
+    public void ajouterJoueurNoirs(Joueur joueurNoirs) {
+        noirs = joueurNoirs;
     }
 }
